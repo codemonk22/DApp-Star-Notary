@@ -1,5 +1,6 @@
 # DApp-Star-Notary
-Decentralized Star Notary Service Project with ERC721. StarNotary smart contract allows for to own, prove and transfer/sale of the stars ownership which has been deployed on the Rinkeby public test network. This project has been build on the ERC-721 NFT or unique tokens on the Ethereum blockchain. This tokenn can can be shared/trade or transfer ownsership to any of your friends.
+#### Decentralized Star Notary Service Project with ERC721. 
+The StarNotary smart contract, which has been deployed on the Rinkeby public test network, provides for the ownership, proof, and transfer/sale of stars. This project is based on the Ethereum blockchain's ERC-721 NFT, or unique tokens. You can share, trade, or transfer ownership of this tokenn to any of your pals.
 
 # Tools used in this project
 
@@ -16,14 +17,13 @@ node -v
 # Check NPM version
 npm -v
 ```
-## List of Functions used in the contract:
-Default functions that came with the boilercode
+## List of Functions used in the Smart contract:
+Default functions are available in the boilerplate code
 ```createStar()
 putStarUpForSale()
 make_payable()
 buyStar()
 ```
-
 #### Newly created Function
 ```
 lookUptokenIdToStarInfo()
@@ -31,9 +31,9 @@ exchangeStars()
 transferStar()
 ```
 #### Name and Symbol of the Star
-``
+```
 constructor() ERC721('TN Grizzlies Star', 'TNGS') {}
-``
+```
 ![image](https://user-images.githubusercontent.com/105297413/168395581-64bddfd6-8516-491d-8ce9-eeb53e6d3ca6.png)
 
 ### lookUptokenIdToStarInfo()
@@ -48,9 +48,7 @@ Allows looking up the star name by its id. By indexing a mapping variable called
     }
 ```
 ### exchangeStars()
-
 Allows for the exchange of two stars. Two star IDs are inputs, and the address owner can be determined using "ownerOf." We can tell the sender is the owner of one of the stars by comparing the sender address (the one making the request) to the ownerOf ID address. This forbids the trading of any two stars. Stars can be transferred using the transferFrom function. The ERC721 contains this function.
-
 ```
 // Implement Task 1 Exchange Stars function
 function exchangeStars(uint256 _tokenId1, uint256 _tokenId2) public {
@@ -86,7 +84,6 @@ function transferStar(address _to1, uint256 _tokenId) public {
     }
 }
 ```
-
 ### Testing Contract Function
 #### TestStarNotary
 Each test statement deploys an instance of the contract. Depending on the sort of test, stars are also awarded. The address given by truffle, are owned the stars.
@@ -113,10 +110,8 @@ it('can add the star name and star symbol properly', async() => {
 });
 ```
 #### Testting the exchang of stars
-
 To test exchange of stars, you'll need two addresses, both of which have exchange stars. The starIds are then passed to the contract's exchangeStars method. The ownership of the stars will be in the other address to see if the exchange worked.
 This table my help with accounts to stars ownership.
-
 ```
 it('lets 2 users exchange stars', async() => {
     // 1. create 2 Stars with different tokenId
@@ -135,11 +130,8 @@ it('lets 2 users exchange stars', async() => {
 
 });
 ```
-
 #### Test transfer stars
-
 Testing transfer stars necessitates two addresses, each with a single star. After entering the receiver's address and the sender's star ID into transferStar. The test will then pass by proving that the receiver's address is now the new owner of the star.
-
 ```
 it('lets a user transfer a star', async() => {
     // 1. create a Star with different tokenId
@@ -154,7 +146,6 @@ it('lets a user transfer a star', async() => {
     assert.equal(await instance.ownerOf(tokenId), user2);
 });
 ```
-
 #### Front End DAPP
 ```
 functions:
@@ -163,11 +154,8 @@ createStar: allows a user to create a star on the blockchain with a metamask add
 
 lookUp: allows a user to lookup a star name by ID through the use of a contract function.
 ```
-
 ![image](https://user-images.githubusercontent.com/105297413/168397398-24424395-f22a-42a4-9cca-161158138685.png)
-
 ## Project Environment Setup
-
 ```
 # Unsinstall any previous version
 npm uninstall -g truffle
@@ -264,9 +252,7 @@ Please view the newly created star Token on [Etherscan](https://rinkeby.ethersca
 ## Etherscan Contract Display
 ![image](https://user-images.githubusercontent.com/105297413/168394741-29deae4a-f342-4dc1-a7a3-8f034160a86b.png)
 
-
-```
-#### Troubleshoot
+### Troubleshoot:
 
  Error 1
  ```
@@ -291,7 +277,4 @@ compilers: {
 Raise a PR or report an Issue
 Feel free to raise a Pull Request if you find a bug/scope of improvement in the current repository.
 ```
-```
  If you have suggestions or facing issues, you can log in issue.
-```
-```

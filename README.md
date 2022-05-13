@@ -109,7 +109,7 @@ it('can add the star name and star symbol properly', async() => {
     assert.equal(starLookUp,'Mystar');
 });
 ```
-#### Testting the exchang of stars
+#### Testting the exchange of stars
 To test exchange of stars, you'll need two addresses, both of which have exchange stars. The starIds are then passed to the contract's exchangeStars method. The ownership of the stars will be in the other address to see if the exchange worked.
 This table my help with accounts to stars ownership.
 ```
